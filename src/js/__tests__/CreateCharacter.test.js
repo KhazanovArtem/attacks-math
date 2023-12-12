@@ -20,7 +20,8 @@ test('Bowerman create', () => {
 test('Daemon create', () => {
     const player = new Daemon('Lucifer', "Daemon");
     const result = {
-        attack: 10,
+        _attack: 10,
+        distance: undefined,
         defence: 40,
         health: 100,
         level: 1,
@@ -32,8 +33,9 @@ test('Daemon create', () => {
 test('Magician create', () => {
     const player = new Magician('Merlin', "Magician");
     const result = {
-        attack: 10,
+        _attack: 10,
         defence: 40,
+        distance: undefined,
         health: 100,
         level: 1,
         name: "Merlin",

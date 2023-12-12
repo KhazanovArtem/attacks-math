@@ -8,17 +8,20 @@ test('chek error new AttackDebuf', () => {
     }).toThrow("Объект класса AttackDebuf не может создаваться конструкцией new");
 })
 
-test('chek get/set spellAttack', () => {
+test('chek get/set attack', () => {
     const player2 = new Daemon('Lucifer', 'Daemon');
-    const distance = 2;
-    player2.spellAttack = distance;
-    expect(player2.spellAttack).toBe(9);
+    player2.distance = 2;
+    player2.attack = 100;
+    player2.distance = 2;
+    player2.stoned = false;
+    expect(player2.attack).toBe(90);
 });
 
-test('check get/set stonedAttack', () => {
+test('check get/set stoned', () => {
     const player2 = new Daemon('Lucifer', 'Daemon');
-    const distance = 4;
-    player2.spellAttack = distance;
-    player2.stonedAttack = distance;
-    expect(player2.stonedAttack).toBe(4.5);
+    player2.distance = 2;
+    player2.attack = 100;
+    player2.distance = 2;
+    player2.stoned = true;
+    expect(player2.attack).toBe(85);
 })

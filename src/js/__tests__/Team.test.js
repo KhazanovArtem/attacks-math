@@ -57,14 +57,16 @@ test('Check method addAll', () => {
     ];
     const array = new Set();
     array.add({
-        attack: 10,
+        _attack: 10,
+        distance: undefined,
         defence: 40,
         health: 100,
         level: 1,
         name: "Lucifer",
         type: "Daemon"});
     array.add({
-        attack: 10,
+        _attack: 10,
+        distance: undefined,
         defence: 40,
         health: 100,
         level: 1,
@@ -118,14 +120,16 @@ test('Check method toArray', () => {
     const array = team.toArray();
     const result = [
         {
-            attack: 10,
+            _attack: 10,
+            distance: undefined,
             defence: 40,
             health: 100,
             level: 1,
             name: "Lucifer",
             type: "Daemon"},
         {
-            attack: 10,
+            _attack: 10,
+            distance: undefined,
             defence: 40,
             health: 100,
             level: 1,

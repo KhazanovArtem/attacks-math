@@ -1,28 +1,34 @@
 import Character from "./Character";
 
 export default class AttackDebuf extends Character {
-    constructor(name, type, level = 1, health = 100) {
+    constructor(name, type, level = 1, health = 100, distance) {
         super(name, type, level, health);
         this.attack = 10;
         this.defence = 40;
-        if (new.target == AttackDebuf) {
+        this.distance = distance;
+        if(new.target == AttackDebuf) {
             throw new Error('Объект класса AttackDebuf не может создаваться конструкцией new');
-          }
+        }
     }
 
-    get spellAttack() {
-        return this._attack;
+    get attack() {
+        return Math.ceil(this._attack*(1-(this.distance*0.1)+0.1)) - this.stoned;
     }
 
-    set spellAttack(distance) {
-        this._attack = Math.ceil(this.attack*(1-(distance*0.1)+0.1));
+    set attack(attack) {
+            this._attack = attack;
+        // this._attack = Math.ceil(this.attack*(1-(distance*0.1)+0.1));
     }
 
-    get stonedAttack() {
-        return this._attack;
+    get stoned() {
+        return this.__attack;
     }
 
-    set stonedAttack(distance) {
-        this._attack = this.spellAttack - (Math.log(2)/Math.log(distance))*5;
+    set stoned(val) {
+        if (val) {
+            this.__attack = Math.log(2)/Math.log(this.distance)*5;
+        } else {
+            this.__attack = 0;
+        }
     }
 }
