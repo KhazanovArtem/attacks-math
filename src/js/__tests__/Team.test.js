@@ -58,6 +58,7 @@ test('Check method addAll', () => {
     const array = new Set();
     array.add({
         _attack: 10,
+        _stoned: 0,
         distance: undefined,
         defence: 40,
         health: 100,
@@ -66,6 +67,7 @@ test('Check method addAll', () => {
         type: "Daemon"});
     array.add({
         _attack: 10,
+        _stoned: 0,
         distance: undefined,
         defence: 40,
         health: 100,
@@ -121,6 +123,7 @@ test('Check method toArray', () => {
     const result = [
         {
             _attack: 10,
+            _stoned: 0,
             distance: undefined,
             defence: 40,
             health: 100,
@@ -129,6 +132,7 @@ test('Check method toArray', () => {
             type: "Daemon"},
         {
             _attack: 10,
+            _stoned: 0,
             distance: undefined,
             defence: 40,
             health: 100,

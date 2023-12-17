@@ -6,6 +6,7 @@ export default class AttackDebuf extends Character {
         this.attack = 10;
         this.defence = 40;
         this.distance = distance;
+        this.stoned = 0;
         if(new.target == AttackDebuf) {
             throw new Error('Объект класса AttackDebuf не может создаваться конструкцией new');
         }
@@ -21,14 +22,14 @@ export default class AttackDebuf extends Character {
     }
 
     get stoned() {
-        return this.__attack;
+        return this._stoned;
     }
 
     set stoned(val) {
         if (val) {
-            this.__attack = Math.log(2)/Math.log(this.distance)*5;
+            this._stoned = Math.log(2)/Math.log(this.distance)*5;
         } else {
-            this.__attack = 0;
+            this._stoned = 0;
         }
     }
 }

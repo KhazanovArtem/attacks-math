@@ -21,6 +21,7 @@ test('Daemon create', () => {
     const player = new Daemon('Lucifer', "Daemon");
     const result = {
         _attack: 10,
+        _stoned: 0,
         distance: undefined,
         defence: 40,
         health: 100,
@@ -34,6 +35,7 @@ test('Magician create', () => {
     const player = new Magician('Merlin', "Magician");
     const result = {
         _attack: 10,
+        _stoned: 0,
         defence: 40,
         distance: undefined,
         health: 100,
