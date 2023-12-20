@@ -13,7 +13,11 @@ export default class AttackDebuf extends Character {
     }
 
     get attack() {
-        return Math.ceil(this._attack*(1-(this.distance*0.1)+0.1)) - this.stoned;
+        if (this._stoned === true) {
+            return Math.ceil(this._attack*(1-(this.distance*0.1)+0.1)) - Math.log(2)/Math.log(this.distance)*5;
+        } else {
+            return Math.ceil(this._attack*(1-(this.distance*0.1)+0.1))
+        }
     }
 
     set attack(attack) {
@@ -26,10 +30,6 @@ export default class AttackDebuf extends Character {
     }
 
     set stoned(val) {
-        if (val) {
-            this._stoned = Math.log(2)/Math.log(this.distance)*5;
-        } else {
-            this._stoned = 0;
-        }
+        this._stoned = val;
     }
 }
